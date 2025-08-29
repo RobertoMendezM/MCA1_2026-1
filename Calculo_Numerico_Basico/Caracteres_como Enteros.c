@@ -15,8 +15,8 @@ int main()
     printf("Dame dos letras separadas por un espacio: ");
     scanf("%c %c", &a, &b);
     suma = a + b;
-    printf("%c en ASCII vale %d", a, a);
-    printf("%c en ASCII vale %d", b, b);
+    printf("%c en ASCII vale %d \n", a, a);
+    printf("%c en ASCII vale %d \n", b, b);
     printf("La suma de %c + %c es: %d", a, b, suma);
     return 0;
 }
