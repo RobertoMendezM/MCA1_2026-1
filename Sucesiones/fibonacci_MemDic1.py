@@ -2,6 +2,8 @@
 """
 Fibonacci con Memoria con cálculo hacia abajo
 
+Curso: MCA1 2026-1
+
 Tema: Sucesión con Memoria para evitar llamadas redundantes
    
    Dic[int, int] represents a dictionary where both keys and values are 
@@ -27,7 +29,7 @@ Software: Python 3.12.12
 Editor: Roberto Méndez Méndez
 
 Created on Fri Jun 14 2024
-Edited: Oct 30 2025
+Edited: Oct 31 2025
 """
 
 from typing import Dict
