@@ -7,7 +7,7 @@
  *       Gunter Saake Kai-Uwe Sattler (2021). Algorithmen and Datenstrukturen Eine
  *       Einführung mit Java
  *       - Buchseite: 392
- *       - Pogramm 9.4  geändert
+ *       - Pogramm 9.4 geändert
  *
  *Temas:  Sucesiones
  *        Runnable-Threads
@@ -15,9 +15,14 @@
  *        Ciclos
  *        BigInteger
  *
+ * Software: java 25
+ *           IDE IntelliJ 2025.3.1
+ *
  * Editor: Roberto Méndez Méndez
  * Creación: 14/Dic/21
- * Editado:  27/Oct/25
+ * Edición: 06/ Ene /26  Corrigió Error en Fibonacci
+ *                       Variable global "numThread" para numeros de hilos de
+ *                       ejecución
  */
 
 import java.math.BigInteger;
@@ -25,6 +30,7 @@ public class FibonacciThreadsBigInteger implements Runnable{
 
     BigInteger fi;
     int num;
+    private static final int numThread = 10;
 
     public FibonacciThreadsBigInteger(int n, BigInteger f){
         num = n;
@@ -41,7 +47,7 @@ public class FibonacciThreadsBigInteger implements Runnable{
 
     public BigInteger fibonacci(BigInteger f) {
         if (f.compareTo(BigInteger.TWO) < 0) {
-            return BigInteger.ONE;
+            return f;
         } else
             return fibonacci(f.add(BigInteger.ONE.negate())).add(
                              fibonacci(f.add(BigInteger.TWO.negate())));
@@ -49,13 +55,13 @@ public class FibonacciThreadsBigInteger implements Runnable{
 
     static void main(){
 
-        Thread[] threads = new Thread[10];
+        Thread[] threads = new Thread[numThread];
 
-        for (int i = 0; i < 10; i++) {
-            long algo = (long)(Math.random()*50) + 1;
+        for (int i = 0; i < numThread; i++) {
+            long algo = (long)(Math.random()*45) + 1;
             threads[i] = new Thread(
                     new FibonacciThreadsBigInteger(i, BigInteger.valueOf(algo)));
         }
-        for(int i = 0; i < 10; i++) threads[i].start();
+        for(int i = 0; i < numThread; i++) threads[i].start();
     }
 }
